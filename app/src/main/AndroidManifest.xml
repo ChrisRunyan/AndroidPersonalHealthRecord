@@ -18,6 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddRecordActivity"
+            android:label="@string/title_activity_add_record"></activity>
     </application>
 
 </manifest>
