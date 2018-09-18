@@ -24,7 +24,8 @@
         <activity
             android:name=".AddObservationActivity"
             android:label="@string/title_activity_add_observation"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

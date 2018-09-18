@@ -7,5 +7,9 @@
     <string name="title_activity_add_record">AddRecordActivity</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+<<<<<<< HEAD
     <string name="title_activity_add_observation">AddObservationActivity</string>
+=======
+    <string name="title_activity_view">ViewActivity</string>
+>>>>>>> 4327fafea4bfabb56ed967782218455783f41471
 </resources>
