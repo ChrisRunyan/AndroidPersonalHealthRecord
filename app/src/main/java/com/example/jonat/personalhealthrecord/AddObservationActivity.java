@@ -1,5 +1,7 @@
 package com.example.jonat.personalhealthrecord;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -9,32 +11,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class AddObservationActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
+    private View.OnClickListener onNavigationButtonClickListener
+            = new View.OnClickListener()
+    {
         @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_records:
-                    mTextMessage.setText(R.string.title_records);
-                    return true;
-                case R.id.navigation_profile:
-                    mTextMessage.setText(R.string.title_profile);
-                    return true;
-                case R.id.navigation_about:
-                    mTextMessage.setText(R.string.title_about);
-                    return true;
+        public void onClick(View v) {
+            if (v.getId() == R.id.add_obs_back) {
+                openActivity(MainActivity.class);
+            } else if (v.getId() == R.id.add_obs_forward) {
+                openActivity(RecordsActivity.class);
             }
-            return false;
         }
     };
 
@@ -42,17 +35,22 @@ public class AddObservationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_observation);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        TextView obsType = (TextView) findViewById(R.id.observationTitle);
+        EditText obsEntry = (EditText) findViewById(R.id.obs_entry);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ImageButton backButton = (ImageButton) findViewById(R.id.add_obs_back);
+        ImageButton forwardButton = (ImageButton) findViewById(R.id.add_obs_forward);
+
+        backButton.setOnClickListener(onNavigationButtonClickListener);
+        forwardButton.setOnClickListener(onNavigationButtonClickListener);
+        setSupportActionBar(toolbar);
+    }
+
+    private void openActivity(Class c) {
+        AppCompatActivity me = AddObservationActivity.this;
+        Intent intent = new Intent(me, c);
+        me.startActivity(intent);
     }
 
 }
