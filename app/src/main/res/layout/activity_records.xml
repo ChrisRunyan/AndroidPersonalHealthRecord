@@ -18,6 +18,33 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/but_1"
+        android:text="Blood Pressure - 6:30 AM, 9/15/2018"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/but_2"
+        app:layout_constraintTop_toBottomOf="@+id/but_1"
+        android:text="Blood Glucose - 6:34 AM, 9/15/2018"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/but_3"
+        app:layout_constraintTop_toBottomOf="@+id/but_2"
+        android:text="Blood Glucose - 8:07 AM, 9/15/2018"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:id="@+id/but_4"
+        app:layout_constraintTop_toBottomOf="@+id/but_3"
+        android:text="Blood Glucose - 11:00 AM, 9/15/2018"/>
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add"
         android:layout_width="wrap_content"

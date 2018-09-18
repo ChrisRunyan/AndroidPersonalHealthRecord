@@ -7,13 +7,12 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-
-    private TextView mTextMessage;
+public class RecordsActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -22,14 +21,12 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    return true;
+                    openActivity(MainActivity.class);
                 case R.id.navigation_records:
-                    openActivity(RecordsActivity.class);
+                    return true;
                 case R.id.navigation_profile:
-                    mTextMessage.setText(R.string.title_profile);
                     return true;
                 case R.id.navigation_about:
-                    mTextMessage.setText(R.string.title_about);
                     return true;
             }
             return false;
@@ -39,13 +36,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        mTextMessage = (TextView) findViewById(R.id.message);
+        setContentView(R.layout.activity_records);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navigation.setSelectedItemId(R.id.navigation_home);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add);
+        navigation.setSelectedItemId(R.id.navigation_records);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,11 +52,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openActivity(Class c) {
-        AppCompatActivity me = MainActivity.this;
+        AppCompatActivity me = RecordsActivity.this;
         Intent intent = new Intent(me, c);
         me.startActivity(intent);
     }
 
 }
-
-
