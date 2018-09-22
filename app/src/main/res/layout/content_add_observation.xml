@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="0dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    app:layout_constraintBottom_toBottomOf="parent"
     tools:context=".AddObservationActivity"
     tools:showIn="@layout/activity_add_observation">
 
-    
+    <TextView
+        android:id="@+id/date1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9/15/2018"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:id="@+id/bt_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Body Temperature - 98.2"
+        app:layout_constraintTop_toBottomOf="@id/date1"/>
+    <Button
+        android:id="@+id/hw_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Height - 6 ft. 0 in. | Weight - 165 lbs"
+        app:layout_constraintTop_toBottomOf="@id/bt_log"/>
 
-
-</android.support.constraint.ConstraintLayout>
+</merge>

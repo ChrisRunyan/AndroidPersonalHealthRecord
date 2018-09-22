@@ -19,19 +19,6 @@ import android.widget.TextView;
 
 public class AddObservationActivity extends AppCompatActivity {
 
-//    private View.OnClickListener onNavigationButtonClickListener
-//            = new View.OnClickListener()
-//    {
-//        @Override
-//        public void onClick(View v) {
-//            if (v.getId() == R.id.add_obs_back) {
-//                openActivity(MainActivity.class);
-//            } else if (v.getId() == R.id.add_obs_forward) {
-//                openActivity(RecordsActivity.class);
-//            }
-//        }
-//    };
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 

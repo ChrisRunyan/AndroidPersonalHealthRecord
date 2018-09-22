@@ -24,22 +24,14 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/inner_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/obs_appbarlayout">
 
         <include layout="@layout/content_add_observation" />
 
     </android.support.constraint.ConstraintLayout>
 
-    <include layout="@layout/floating_add_button"
-        app:layout_constraintBottom_toTopOf="@id/navigation"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_margin="16dp"/>
-    <include layout="@layout/bottom_navigation"
-        android:id="@+id/navigation"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+    <include layout="@layout/floating_add_button" />
+    <include layout="@layout/bottom_navigation" />
 
 </android.support.constraint.ConstraintLayout>
