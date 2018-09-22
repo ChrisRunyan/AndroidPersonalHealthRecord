@@ -2,4 +2,11 @@
 <resources>
     <string name="obs_fever">Fever</string>
     <string name="obs_blood_glucose">Blood Glucose</string>
+    <string name="obs_bmi">BMI</string>
+    <string name="obs_blood_pressure">Blood Pressure</string>
+    <string name="obs_weight">Weight</string>
+    <string name="obs_height">Height</string>
+    <string name="obs_heart_rate">Heart Rate</string>
+    <string name="obs_resp_rate">Resp. Rate</string>
+    <string name="obs_body_temp">Body Temperature</string>
 </resources>
