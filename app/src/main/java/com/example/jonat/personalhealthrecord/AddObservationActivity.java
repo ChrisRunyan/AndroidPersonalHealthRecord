@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -18,16 +19,37 @@ import android.widget.TextView;
 
 public class AddObservationActivity extends AppCompatActivity {
 
-    private View.OnClickListener onNavigationButtonClickListener
-            = new View.OnClickListener()
-    {
+//    private View.OnClickListener onNavigationButtonClickListener
+//            = new View.OnClickListener()
+//    {
+//        @Override
+//        public void onClick(View v) {
+//            if (v.getId() == R.id.add_obs_back) {
+//                openActivity(MainActivity.class);
+//            } else if (v.getId() == R.id.add_obs_forward) {
+//                openActivity(RecordsActivity.class);
+//            }
+//        }
+//    };
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
         @Override
-        public void onClick(View v) {
-            if (v.getId() == R.id.add_obs_back) {
-                openActivity(MainActivity.class);
-            } else if (v.getId() == R.id.add_obs_forward) {
-                openActivity(RecordsActivity.class);
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    openActivity(MainActivity.class);
+                    return true;
+                case R.id.navigation_records:
+                    openActivity(RecordsActivity.class);
+                    return true;
+                case R.id.navigation_profile:
+                    return true;
+                case R.id.navigation_about:
+                    return true;
             }
+            return false;
         }
     };
 
@@ -36,15 +58,28 @@ public class AddObservationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_observation);
 
-        TextView obsType = (TextView) findViewById(R.id.observationTitle);
-        EditText obsEntry = (EditText) findViewById(R.id.obs_entry);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        Button backButton = (Button) findViewById(R.id.add_obs_back);
-        Button forwardButton = (Button) findViewById(R.id.add_obs_forward);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add);
 
-        backButton.setOnClickListener(onNavigationButtonClickListener);
-        forwardButton.setOnClickListener(onNavigationButtonClickListener);
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         setSupportActionBar(toolbar);
+        registerForContextMenu(fab);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu context, View view, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(context, view, menuInfo);
+        context.setHeaderTitle(R.string.addMenu_title);
+        String[] itemValues = getResources().getStringArray(R.array.obs_values);
+        for (String value : itemValues) {
+            context.add(0, view.getId(), 0, value);
+        }
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        return false;
     }
 
     private void openActivity(Class c) {

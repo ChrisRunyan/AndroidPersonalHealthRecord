@@ -6,7 +6,19 @@
     <string name="obs_blood_pressure">Blood Pressure</string>
     <string name="obs_weight">Weight</string>
     <string name="obs_height">Height</string>
+    <string name="obs_height_weight">Height/Weight</string>
     <string name="obs_heart_rate">Heart Rate</string>
     <string name="obs_resp_rate">Resp. Rate</string>
     <string name="obs_body_temp">Body Temperature</string>
+
+    <string-array name="obs_values">
+        <item>@string/obs_blood_pressure</item>
+        <item>@string/obs_bmi</item>
+        <item>@string/obs_height_weight</item>
+        <item>@string/obs_blood_glucose</item>
+        <item>@string/obs_heart_rate</item>
+        <item>@string/obs_resp_rate</item>
+        <item>@string/obs_body_temp</item>
+    </string-array>
+
 </resources>

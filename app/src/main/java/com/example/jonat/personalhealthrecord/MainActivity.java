@@ -5,16 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-    private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -26,11 +22,10 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_records:
                     openActivity(RecordsActivity.class);
+                    return true;
                 case R.id.navigation_profile:
-                    mTextMessage.setText(R.string.title_profile);
                     return true;
                 case R.id.navigation_about:
-                    mTextMessage.setText(R.string.title_about);
                     return true;
             }
             return false;
@@ -42,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_home);
@@ -66,6 +60,15 @@ public class MainActivity extends AppCompatActivity {
         context.add(0, view.getId(), 0, R.string.addMenu_procedures);
         context.add(0, view.getId(), 0, R.string.addMenu_allergies);
     }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        if (getString(R.string.addMenu_symptoms).contentEquals(item.getTitle())) {
+            openActivity(AddObservationActivity.class);
+        }
+        return false;
+    }
+
 
     private void openActivity(Class c) {
         AppCompatActivity me = MainActivity.this;
