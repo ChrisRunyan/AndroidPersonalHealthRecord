@@ -7,6 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -52,6 +53,18 @@ public class MainActivity extends AppCompatActivity {
                 openActivity(AddObservationActivity.class);
             }
         });
+
+        registerForContextMenu(fab);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu context, View view, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(context, view, menuInfo);
+        context.setHeaderTitle("Options");
+        context.add(0, view.getId(), 0, "Symptoms");
+        context.add(0, view.getId(), 0, "Medications");
+        context.add(0, view.getId(), 0, "Procedures");
+        context.add(0, view.getId(), 0, "Allergies");
     }
 
     private void openActivity(Class c) {
