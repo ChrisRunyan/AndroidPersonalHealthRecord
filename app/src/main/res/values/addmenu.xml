@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="addMenu_title">Options</string>
+    <string name="addMenu_symptoms">Symptoms</string>
+    <string name="addMenu_medications">Medications</string>
+    <string name="addMenu_procedures">Procedures</string>
+    <string name="addMenu_allergies">Allergies</string>
+</resources>
