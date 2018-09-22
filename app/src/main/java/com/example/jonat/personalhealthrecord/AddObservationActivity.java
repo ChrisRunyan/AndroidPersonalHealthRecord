@@ -39,8 +39,8 @@ public class AddObservationActivity extends AppCompatActivity {
         TextView obsType = (TextView) findViewById(R.id.observationTitle);
         EditText obsEntry = (EditText) findViewById(R.id.obs_entry);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        ImageButton backButton = (ImageButton) findViewById(R.id.add_obs_back);
-        ImageButton forwardButton = (ImageButton) findViewById(R.id.add_obs_forward);
+        Button backButton = (Button) findViewById(R.id.add_obs_back);
+        Button forwardButton = (Button) findViewById(R.id.add_obs_forward);
 
         backButton.setOnClickListener(onNavigationButtonClickListener);
         forwardButton.setOnClickListener(onNavigationButtonClickListener);
