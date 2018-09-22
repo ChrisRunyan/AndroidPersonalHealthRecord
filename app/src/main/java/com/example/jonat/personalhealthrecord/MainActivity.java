@@ -60,11 +60,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu(ContextMenu context, View view, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(context, view, menuInfo);
-        context.setHeaderTitle("Options");
-        context.add(0, view.getId(), 0, "Symptoms");
-        context.add(0, view.getId(), 0, "Medications");
-        context.add(0, view.getId(), 0, "Procedures");
-        context.add(0, view.getId(), 0, "Allergies");
+        context.setHeaderTitle(R.string.addMenu_title);
+        context.add(0, view.getId(), 0, R.string.addMenu_symptoms);
+        context.add(0, view.getId(), 0, R.string.addMenu_medications);
+        context.add(0, view.getId(), 0, R.string.addMenu_procedures);
+        context.add(0, view.getId(), 0, R.string.addMenu_allergies);
     }
 
     private void openActivity(Class c) {
