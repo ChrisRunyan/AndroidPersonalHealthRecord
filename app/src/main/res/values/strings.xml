@@ -10,5 +10,8 @@
     <string name="title_activity_add_observation">Add Observation</string>
     <string name="title_activity_view">ViewActivity</string>
     <string name="title_activity_records">RecordsActivity</string>
-
+    <string name="app_instruction">You can use the plus button at the bottom of any page to
+    add a new health record at any time. Using the buttonns at the bottom of the screen will allow you
+    navigate through the app. Thank you!</string>
+    <string name="title_activity_add_medications">AddMedicationsActivity</string>
 </resources>
