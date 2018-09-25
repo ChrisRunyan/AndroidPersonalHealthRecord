@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_profile:
                     openActivity(ProfileActivity.class);
                 case R.id.navigation_about:
-                    mTextMessage.setText(R.string.title_about);
                     return true;
             }
             return false;
