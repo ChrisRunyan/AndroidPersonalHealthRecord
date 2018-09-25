@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,10 +24,14 @@ public class RecordsActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     openActivity(MainActivity.class);
+                    Log.d("INSIDE RECORDS","OPENED HOME ACTIVITY: "+item.getItemId());
+                    return true;
                 case R.id.navigation_records:
                     return true;
                 case R.id.navigation_profile:
                     openActivity(ProfileActivity.class);
+                    Log.d("INSIDE RECORDS","OPENED PROFILE ACTIVITY: "+item.getItemId());
+                    return true;
                 case R.id.navigation_about:
                     return true;
             }

@@ -7,6 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,8 +27,12 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_records:
                     openActivity(RecordsActivity.class);
+                    Log.d("INSIDE MAIN","OPENED RECORDS ACTIVITY: "+item.getItemId());
+                    return true;
                 case R.id.navigation_profile:
                     openActivity(ProfileActivity.class);
+                    Log.d("INSIDE MAIN","OPENED PROFILE ACTIVITY: "+item.getItemId());
+                    return true;
                 case R.id.navigation_about:
                     return true;
             }

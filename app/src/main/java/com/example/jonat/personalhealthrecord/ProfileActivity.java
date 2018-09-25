@@ -32,8 +32,12 @@ public class ProfileActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     openActivity(MainActivity.class);
+                    Log.d("INSIDE PROFILE","OPENED HOME ACTIVITY: "+item.getItemId());
+                    return true;
                 case R.id.navigation_records:
                     openActivity(RecordsActivity.class);
+                    Log.d("INSIDE PROFILE","OPENED RECORDS ACTIVITY: "+item.getItemId());
+                    return true;
                 case R.id.navigation_profile:
                     return true;
                 case R.id.navigation_about:
