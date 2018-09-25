@@ -10,5 +10,12 @@
     <string name="title_activity_add_observation">Add Observation</string>
     <string name="title_activity_view">ViewActivity</string>
     <string name="title_activity_records">RecordsActivity</string>
+    <string name="tab_text_1">Text for tab 1</string>
+    <string name="tab_text_2">Text for tab 2</string>
+    <string name="tab_text_3">Text for tab 3</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="app_instruction">App Instruction</string>
 
 </resources>
