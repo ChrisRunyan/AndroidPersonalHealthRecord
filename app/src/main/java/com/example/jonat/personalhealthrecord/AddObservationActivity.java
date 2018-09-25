@@ -57,7 +57,7 @@ public class AddObservationActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu(ContextMenu context, View view, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(context, view, menuInfo);
-        context.setHeaderTitle(R.string.addMenu_title);
+        context.setHeaderTitle(R.string.obs_menu_title);
         String[] itemValues = getResources().getStringArray(R.array.obs_values);
         for (String value : itemValues) {
             context.add(0, view.getId(), 0, value);
