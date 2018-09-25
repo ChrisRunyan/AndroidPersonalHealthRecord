@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Personal Health Record</string>
+    <string name="app_name">Personal Health Record 6</string>
     <string name="title_home">Home</string>
     <string name="title_records">Records</string>
     <string name="title_profile">Profile</string>
@@ -10,9 +10,13 @@
     <string name="title_activity_add_observation">Add Observation</string>
     <string name="title_activity_view">ViewActivity</string>
     <string name="title_activity_records">RecordsActivity</string>
-    <string name="tab_text_1">Text for tab 1</string>
-    <string name="tab_text_2">Text for tab 2</string>
-    <string name="tab_text_3">Text for tab 3</string>
+    <string name="tab_text_1">
+        <font size="16"><b>Name: </b>John Smith\n<b>Gender: </b>Male\n<b>Date of Birth: </b>July 31, 1952\n<b>AddresS: </b>123 Fourth Street, Washington, DC 20027\n<b>Marital Status: </b>Married\n<b>Contact Person: </b>Susan Smith</font>
+    </string>
+    <string name="tab_text_2">
+        <font size="16"><b>Contact Person: </b>Susan Smith\n<b>Relation: </b>Wife\n\n<b>Emergency Contact: </b>Jefferson Smith\n<b>Relation: </b>Son</font>
+    </string>
+    <string name="tab_text_3">text for tab 3</string>
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
