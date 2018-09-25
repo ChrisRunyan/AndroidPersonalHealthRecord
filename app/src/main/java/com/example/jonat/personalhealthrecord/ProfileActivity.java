@@ -120,7 +120,16 @@ public class ProfileActivity extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            if(getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
+                textView.setText(R.string.tab_content_1);
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
+                textView.setText(R.string.tab_content_2);
+            }
+            else if(getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
+                textView.setText(R.string.tab_content_3);
+            }
+            //extView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }

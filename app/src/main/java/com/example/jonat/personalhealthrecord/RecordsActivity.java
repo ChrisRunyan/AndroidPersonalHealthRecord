@@ -26,7 +26,7 @@ public class RecordsActivity extends AppCompatActivity {
                 case R.id.navigation_records:
                     return true;
                 case R.id.navigation_profile:
-                    return true;
+                    openActivity(ProfileActivity.class);
                 case R.id.navigation_about:
                     return true;
             }
