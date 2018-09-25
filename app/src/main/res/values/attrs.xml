@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ObservationLog">
-        <attr name="observationName" format="string"/>
-        <attr name="observationDate" format="string" />
-        <attr name="observationAuthor" format="string" />
+    <declare-styleable name="BasicEntry">
+        <attr name="entryName" format="reference|string"/>
+        <attr name="entryDate" format="reference|string" />
+        <attr name="entryValue" format="reference|string|float" />
+        <attr name="entryAuthor" format="reference|string" />
     </declare-styleable>
 </resources>
