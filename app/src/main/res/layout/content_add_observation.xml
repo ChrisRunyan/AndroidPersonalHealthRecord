@@ -9,12 +9,31 @@
     tools:showIn="@layout/activity_add_observation">
 
     <com.example.jonat.personalhealthrecord.BasicEntry
-        android:id="@+id/entry1"
+        android:id="@+id/obs_entry1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:entryName="@string/obs_body_temp"
         app:entryDate="15-09-2018"
         app:entryValue="98.2"
-        app:entryAuthor="Me"/>
+        app:entryAuthor="Me"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <com.example.jonat.personalhealthrecord.BasicEntry
+        android:id="@+id/obs_entry2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:entryName="@string/obs_height_weight"
+        app:entryDate="15-09-2018"
+        app:entryValue="Height: 6ft 0in | Weight: 165 lbs"
+        app:entryAuthor="Dr. Smith"
+        app:layout_constraintTop_toBottomOf="@id/obs_entry1"/>
+    <com.example.jonat.personalhealthrecord.BasicEntry
+        android:id="@+id/obs_entry3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:entryName="@string/obs_heart_rate"
+        app:entryDate="05-09-2018"
+        app:entryValue="70 bpm"
+        app:entryAuthor="Me"
+        app:layout_constraintTop_toBottomOf="@id/obs_entry2"/>
 
 </merge>

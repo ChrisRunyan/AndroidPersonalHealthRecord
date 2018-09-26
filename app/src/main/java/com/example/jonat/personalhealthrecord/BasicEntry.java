@@ -12,8 +12,7 @@ public class BasicEntry extends ConstraintLayout {
         super(context);
     }
     public BasicEntry(Context context, AttributeSet attrs, int defStyles) {
-        super(context, attrs, defStyles);
-        new BasicEntry(context, attrs);
+        this(context, attrs);
     }
     public BasicEntry(Context context, AttributeSet attrs) {
         super(context, attrs);
